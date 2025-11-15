@@ -1,7 +1,6 @@
 extends StaticBody2D
 
 @export var next_camera: Camera2D
-@export var gate_open_distance: float = 200.0
 
 var pandaNearby := false
 var polarNearby := false

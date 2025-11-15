@@ -23,7 +23,7 @@ shape = SubResource("RectangleShape2D_n5b27")
 debug_color = Color(0.975968, 0, 0.415419, 0.42)
 
 [node name="PolarBearDemo" parent="." instance=ExtResource("2_n5b27")]
-position = Vector2(-113, 608)
+position = Vector2(-110, 608)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(728, 323)

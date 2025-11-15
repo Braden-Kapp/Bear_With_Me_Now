@@ -1,11 +1,39 @@
 extends RigidBody2D
+ 
+@export var startPosition: Vector2
+@export var endPosition: Vector2
+@export var speed: float = 200.0
 
+@onready var collisionShape = $CollisionShape2D
+@onready var sprite = $Sprite2D
+#Can Set Start/End/Speed in Inspector
+var direction := 1
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func _ready():
+	position = startPosition
 
+func _physics_process(delta):
+	# Move platform
+	position.x += speed * direction * delta
+	if position.x >= endPosition.x:
+		position.x = endPosition.x
+		direction = -1
+	elif position.x <= startPosition.x:
+		position.x = startPosition.x
+		direction = 1
+		
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _breakBamboo():
+	if collisionShape:
+		collisionShape.set_deferred("disabled", true)
+
+func _remakeBamboo():
+	if collisionShape:
+		collisionShape.set_deferred("disabled", false)
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	var parent = area.get_parent()
+	if parent.name == "PandaBearDemo":
+		_breakBamboo()
+		await get_tree().create_timer(0.5).timeout
+		_remakeBamboo()

@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bohf68ii5trl6" path="res://art/polar_forwards.png" id="6_n0xa4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t1juj"]
-size = Vector2(291.5, 395)
+size = Vector2(291.5, 374)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kq138"]
 atlas = ExtResource("2_t7wof")
@@ -177,14 +177,14 @@ size = Vector2(281, 377)
 script = ExtResource("1_t7wof")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, 7)
+position = Vector2(2, 5)
 shape = SubResource("RectangleShape2D_t1juj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-7, -39)
 scale = Vector2(1, 1.161)
 sprite_frames = SubResource("SpriteFrames_psdwi")
-animation = &"bigJumpPolar"
+animation = &"standingPolar"
 
 [node name="PolarArea" type="Area2D" parent="."]
 

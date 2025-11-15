@@ -134,14 +134,14 @@ size = Vector2(246, 388)
 script = ExtResource("1_t1juj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(15.25, 21.5)
+position = Vector2(15.25, 31.5)
 shape = SubResource("RectangleShape2D_t1juj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, -1)
 scale = Vector2(1, 1.161)
 sprite_frames = SubResource("SpriteFrames_0egam")
-animation = &"leftJumpPanda"
+animation = &"standPanda"
 
 [node name="LeftGrabArea2D" type="Area2D" parent="."]
 position = Vector2(-270, -12)
