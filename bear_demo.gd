@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name PandaBearDemo
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 const SPEED = 800.0
 const JUMP_VELOCITY = -1300.0

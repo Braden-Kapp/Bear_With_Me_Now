@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name PolarBearDemo
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 const SPEED = 800.0
@@ -15,7 +15,10 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * 2.0 * delta
-
+	
+	if bigJumpin:
+		if velocity.y > 0:
+			animated_sprite.play("fallBigJumpPolar")
 	# Handle jump.
 	if Input.is_action_just_pressed("jumpPolar") and is_on_floor():
 		velocity.y = JUMP_VELOCITY

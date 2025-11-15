@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://c32ox6cyaxm1u"]
+
+[ext_resource type="Script" uid="uid://cg0mqpe67o77m" path="res://scenes/portal.gd" id="1_v0xau"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ppl40"]
+size = Vector2(355, 2544.2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v0xau"]
+size = Vector2(357, 2526)
+
+[node name="Portal" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-32, -7)
+shape = SubResource("RectangleShape2D_ppl40")
+disabled = true
+debug_color = Color(3.682e-06, 0.646538, 0.234569, 0.42)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_v0xau")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-35.5, 7)
+shape = SubResource("RectangleShape2D_v0xau")
+debug_color = Color(0, 0.620436, 0.562429, 0.42)
+
+[node name="PandaDestination" type="Marker2D" parent="."]
+position = Vector2(42, -18)
+
+[node name="PolarDestination" type="Marker2D" parent="."]
+position = Vector2(42, -54)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

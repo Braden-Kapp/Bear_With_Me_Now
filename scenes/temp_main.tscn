@@ -1,21 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://crkvibnwu5r5a"]
+[gd_scene load_steps=7 format=3 uid="uid://crkvibnwu5r5a"]
 
 [ext_resource type="PackedScene" uid="uid://btvpep06p2cqg" path="res://scenes/bear_demo.tscn" id="1_26na8"]
 [ext_resource type="PackedScene" uid="uid://or8p60ncqwo1" path="res://scenes/polar_bear_demo.tscn" id="2_n5b27"]
+[ext_resource type="Texture2D" uid="uid://c2gumejy2apxc" path="res://art/red_idle-1.png.png" id="3_ts228"]
+[ext_resource type="Texture2D" uid="uid://dyxvvcb3otvg6" path="res://art/black_bear_idle-1.png.png" id="4_xw1gg"]
+[ext_resource type="PackedScene" uid="uid://834wa4oqhfjy" path="res://scenes/wall.tscn" id="5_xw1gg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n5b27"]
-size = Vector2(2740, 1055.25)
+size = Vector2(3630, 1055.25)
 
 [node name="Temp Main" type="Node2D"]
 position = Vector2(581, 223)
 
-[node name="BearDemo" parent="." instance=ExtResource("1_26na8")]
+[node name="PandaBearDemo" parent="." instance=ExtResource("1_26na8")]
 position = Vector2(650, 678)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(792, 1746.38)
+position = Vector2(737, 1746.38)
 shape = SubResource("RectangleShape2D_n5b27")
 debug_color = Color(0.975968, 0, 0.415419, 0.42)
 
@@ -25,3 +28,31 @@ position = Vector2(-113, 608)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(728, 323)
 zoom = Vector2(0.4, 0.4)
+
+[node name="RedIdle-1_png" type="Sprite2D" parent="."]
+position = Vector2(2329, 858)
+texture = ExtResource("3_ts228")
+
+[node name="BlackBearIdle-1_png" type="Sprite2D" parent="."]
+position = Vector2(4475, 438)
+texture = ExtResource("4_xw1gg")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(4367, 1745)
+shape = SubResource("RectangleShape2D_n5b27")
+debug_color = Color(0.975968, 0, 0.415419, 0.42)
+
+[node name="Camera2D2" type="Camera2D" parent="."]
+position = Vector2(4340, 305)
+zoom = Vector2(0.4, 0.4)
+
+[node name="Wall" parent="." node_paths=PackedStringArray("next_camera") instance=ExtResource("5_xw1gg")]
+position = Vector2(2543, 1127)
+next_camera = NodePath("../Camera2D2")
+
+[node name="CollisionShape2D" parent="Wall" index="1"]
+position = Vector2(11.5, -589)
+
+[editable path="Wall"]

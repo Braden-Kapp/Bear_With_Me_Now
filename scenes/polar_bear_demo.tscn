@@ -186,9 +186,9 @@ scale = Vector2(1, 1.161)
 sprite_frames = SubResource("SpriteFrames_psdwi")
 animation = &"bigJumpPolar"
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="PolarArea" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PolarArea"]
 position = Vector2(4.5, 10.5)
 shape = SubResource("RectangleShape2D_lxqwh")
 debug_color = Color(0.902458, 0.000153248, 0.756239, 0.42)

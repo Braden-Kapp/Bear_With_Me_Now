@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://btvpep06p2cqg"]
+[gd_scene load_steps=22 format=3 uid="uid://btvpep06p2cqg"]
 
 [ext_resource type="Script" uid="uid://cq6868mx76yyn" path="res://bear_demo.gd" id="1_t1juj"]
 [ext_resource type="Texture2D" uid="uid://8w3m4t1dmusb" path="res://art/panda_climb_left.png" id="2_7qpoi"]
@@ -127,6 +127,9 @@ size = Vector2(82, 215.164)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i4wyw"]
 size = Vector2(87.75, 248)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7qpoi"]
+size = Vector2(246, 388)
+
 [node name="PandaBearDemo" type="CharacterBody2D"]
 script = ExtResource("1_t1juj")
 
@@ -138,7 +141,7 @@ shape = SubResource("RectangleShape2D_t1juj")
 position = Vector2(2, -1)
 scale = Vector2(1, 1.161)
 sprite_frames = SubResource("SpriteFrames_0egam")
-animation = &"grabRightPanda"
+animation = &"leftJumpPanda"
 
 [node name="LeftGrabArea2D" type="Area2D" parent="."]
 position = Vector2(-270, -12)
@@ -156,6 +159,13 @@ position = Vector2(0, -1)
 position = Vector2(186.125, 42)
 shape = SubResource("RectangleShape2D_i4wyw")
 debug_color = Color(0.684899, 0.293791, 1, 0.42)
+
+[node name="PandaArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PandaArea"]
+position = Vector2(12, 25)
+shape = SubResource("RectangleShape2D_7qpoi")
+debug_color = Color(0.69896, 0.492836, 0, 0.42)
 
 [connection signal="area_entered" from="LeftGrabArea2D" to="." method="_on_left_grab_area_2d_area_entered"]
 [connection signal="area_exited" from="LeftGrabArea2D" to="." method="_on_left_grab_area_2d_area_exited"]
