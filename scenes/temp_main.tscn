@@ -10,14 +10,18 @@ size = Vector2(2740, 71)
 position = Vector2(581, 223)
 
 [node name="BearDemo" parent="." instance=ExtResource("1_26na8")]
-position = Vector2(669, 650)
+position = Vector2(650, 678)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(333, 1082)
+position = Vector2(790, 1252)
 shape = SubResource("RectangleShape2D_n5b27")
 debug_color = Color(0.975968, 0, 0.415419, 0.42)
 
 [node name="PolarBearDemo" parent="." instance=ExtResource("2_n5b27")]
 position = Vector2(-113, 608)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(728, 323)
+zoom = Vector2(0.4, 0.4)

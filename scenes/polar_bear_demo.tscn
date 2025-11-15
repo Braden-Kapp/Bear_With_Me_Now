@@ -1,14 +1,16 @@
-[gd_scene load_steps=22 format=3 uid="uid://or8p60ncqwo1"]
+[gd_scene load_steps=25 format=3 uid="uid://or8p60ncqwo1"]
 
 [ext_resource type="Script" uid="uid://7bvdbacv75ye" path="res://scenes/polar_bear_demo.gd" id="1_t7wof"]
 [ext_resource type="Texture2D" uid="uid://0x1nb2x0ex0y" path="res://art/polar_big_jump_charge.png" id="2_t7wof"]
 [ext_resource type="Texture2D" uid="uid://cncjelhjoa21r" path="res://art/polar_left_run.png" id="3_48ni8"]
+[ext_resource type="Texture2D" uid="uid://267ufe3vh84e" path="res://art/polar_left.png" id="3_lxqwh"]
 [ext_resource type="Texture2D" uid="uid://bb14aa38fwwjr" path="res://art/polar_big_jump.png" id="4_lxqwh"]
 [ext_resource type="Texture2D" uid="uid://dnykt2y20iwda" path="res://art/polar_right_run.png" id="5_4uccr"]
+[ext_resource type="Texture2D" uid="uid://5cwq0yncyjp" path="res://art/polar_right.png" id="6_4uccr"]
 [ext_resource type="Texture2D" uid="uid://bohf68ii5trl6" path="res://art/polar_forwards.png" id="6_n0xa4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t1juj"]
-size = Vector2(291.5, 405.75)
+size = Vector2(291.5, 395)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kq138"]
 atlas = ExtResource("2_t7wof")
@@ -38,14 +40,6 @@ region = Rect2(0, 640, 640, 640)
 atlas = ExtResource("3_48ni8")
 region = Rect2(640, 640, 640, 640)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_07ysa"]
-atlas = ExtResource("4_lxqwh")
-region = Rect2(0, 0, 640, 640)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w52t7"]
-atlas = ExtResource("4_lxqwh")
-region = Rect2(0, 640, 640, 640)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_srscd"]
 atlas = ExtResource("5_4uccr")
 region = Rect2(0, 0, 640, 640)
@@ -61,6 +55,14 @@ region = Rect2(0, 640, 640, 640)
 [sub_resource type="AtlasTexture" id="AtlasTexture_088ll"]
 atlas = ExtResource("5_4uccr")
 region = Rect2(640, 640, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07ysa"]
+atlas = ExtResource("4_lxqwh")
+region = Rect2(0, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w52t7"]
+atlas = ExtResource("4_lxqwh")
+region = Rect2(0, 640, 640, 640)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_psdwi"]
 animations = [{
@@ -80,6 +82,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("3_lxqwh")
+}],
+"loop": true,
+"name": &"leftJumpPolar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_nej4a")
 }, {
 "duration": 1.0,
@@ -95,20 +105,12 @@ animations = [{
 "name": &"leftPolar",
 "speed": 5.0
 }, {
-"frames": [],
-"loop": true,
-"name": &"new_animation",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_07ysa")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_w52t7")
+"texture": ExtResource("6_4uccr")
 }],
 "loop": true,
-"name": &"prepBigJump",
+"name": &"rightJumpPolar",
 "speed": 5.0
 }, {
 "frames": [{
@@ -135,18 +137,39 @@ animations = [{
 "loop": true,
 "name": &"standingPolar",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_07ysa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w52t7")
+}],
+"loop": true,
+"name": &"whileBigJump",
+"speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lxqwh"]
+size = Vector2(281, 377)
 
 [node name="PolarBearDemo" type="CharacterBody2D"]
 script = ExtResource("1_t7wof")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, 0)
+position = Vector2(2, 7)
 shape = SubResource("RectangleShape2D_t1juj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-7, -39)
 scale = Vector2(1, 1.161)
 sprite_frames = SubResource("SpriteFrames_psdwi")
-animation = &"bigJumpPolar"
-frame_progress = 0.0438171
+animation = &"standingPolar"
+frame_progress = 0.993378
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(4.5, 10.5)
+shape = SubResource("RectangleShape2D_lxqwh")
+debug_color = Color(0.902458, 0.000153248, 0.756239, 0.42)
