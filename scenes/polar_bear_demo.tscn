@@ -1,0 +1,152 @@
+[gd_scene load_steps=22 format=3 uid="uid://or8p60ncqwo1"]
+
+[ext_resource type="Script" uid="uid://7bvdbacv75ye" path="res://scenes/polar_bear_demo.gd" id="1_t7wof"]
+[ext_resource type="Texture2D" uid="uid://0x1nb2x0ex0y" path="res://art/polar_big_jump_charge.png" id="2_t7wof"]
+[ext_resource type="Texture2D" uid="uid://cncjelhjoa21r" path="res://art/polar_left_run.png" id="3_48ni8"]
+[ext_resource type="Texture2D" uid="uid://bb14aa38fwwjr" path="res://art/polar_big_jump.png" id="4_lxqwh"]
+[ext_resource type="Texture2D" uid="uid://dnykt2y20iwda" path="res://art/polar_right_run.png" id="5_4uccr"]
+[ext_resource type="Texture2D" uid="uid://bohf68ii5trl6" path="res://art/polar_forwards.png" id="6_n0xa4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t1juj"]
+size = Vector2(291.5, 405.75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kq138"]
+atlas = ExtResource("2_t7wof")
+region = Rect2(0, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jecsy"]
+atlas = ExtResource("2_t7wof")
+region = Rect2(640, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xml03"]
+atlas = ExtResource("2_t7wof")
+region = Rect2(0, 640, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nej4a"]
+atlas = ExtResource("3_48ni8")
+region = Rect2(0, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jb72w"]
+atlas = ExtResource("3_48ni8")
+region = Rect2(640, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pt2s1"]
+atlas = ExtResource("3_48ni8")
+region = Rect2(0, 640, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3amy"]
+atlas = ExtResource("3_48ni8")
+region = Rect2(640, 640, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07ysa"]
+atlas = ExtResource("4_lxqwh")
+region = Rect2(0, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w52t7"]
+atlas = ExtResource("4_lxqwh")
+region = Rect2(0, 640, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srscd"]
+atlas = ExtResource("5_4uccr")
+region = Rect2(0, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42qwf"]
+atlas = ExtResource("5_4uccr")
+region = Rect2(640, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mkrmb"]
+atlas = ExtResource("5_4uccr")
+region = Rect2(0, 640, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_088ll"]
+atlas = ExtResource("5_4uccr")
+region = Rect2(640, 640, 640, 640)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_psdwi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kq138")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jecsy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xml03")
+}],
+"loop": true,
+"name": &"bigJumpPolar",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nej4a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jb72w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pt2s1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q3amy")
+}],
+"loop": true,
+"name": &"leftPolar",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_07ysa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w52t7")
+}],
+"loop": true,
+"name": &"prepBigJump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_srscd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42qwf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mkrmb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_088ll")
+}],
+"loop": true,
+"name": &"rightPolar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_n0xa4")
+}],
+"loop": true,
+"name": &"standingPolar",
+"speed": 5.0
+}]
+
+[node name="PolarBearDemo" type="CharacterBody2D"]
+script = ExtResource("1_t7wof")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_t1juj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-7, -39)
+scale = Vector2(1, 1.161)
+sprite_frames = SubResource("SpriteFrames_psdwi")
+animation = &"bigJumpPolar"
+frame_progress = 0.0438171

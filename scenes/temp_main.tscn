@@ -1,17 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://crkvibnwu5r5a"]
+[gd_scene load_steps=4 format=3 uid="uid://crkvibnwu5r5a"]
 
 [ext_resource type="PackedScene" uid="uid://btvpep06p2cqg" path="res://scenes/bear_demo.tscn" id="1_26na8"]
+[ext_resource type="PackedScene" uid="uid://or8p60ncqwo1" path="res://scenes/polar_bear_demo.tscn" id="2_n5b27"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n5b27"]
-size = Vector2(328.5, 71)
+size = Vector2(2740, 71)
 
 [node name="Temp Main" type="Node2D"]
+position = Vector2(581, 223)
 
 [node name="BearDemo" parent="." instance=ExtResource("1_26na8")]
-position = Vector2(130, 96)
+position = Vector2(669, 650)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(184, 240)
+position = Vector2(333, 1082)
 shape = SubResource("RectangleShape2D_n5b27")
+debug_color = Color(0.975968, 0, 0.415419, 0.42)
+
+[node name="PolarBearDemo" parent="." instance=ExtResource("2_n5b27")]
+position = Vector2(-113, 608)
