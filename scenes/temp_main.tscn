@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://crkvibnwu5r5a"]
+
+[ext_resource type="PackedScene" uid="uid://btvpep06p2cqg" path="res://scenes/bear_demo.tscn" id="1_26na8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5b27"]
+size = Vector2(328.5, 71)
+
+[node name="Temp Main" type="Node2D"]
+
+[node name="BearDemo" parent="." instance=ExtResource("1_26na8")]
+position = Vector2(130, 96)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(184, 240)
+shape = SubResource("RectangleShape2D_n5b27")
