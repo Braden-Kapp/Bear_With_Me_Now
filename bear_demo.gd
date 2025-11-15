@@ -14,6 +14,8 @@ func _physics_process(delta: float) -> void:
 	in_grab_area = grab_left or grab_right
 	if in_grab_area:
 		_grab()
+	else:
+		grabbin = false
 	# Add the gravity.
 	if not is_on_floor():
 		if not grabbin:
@@ -64,8 +66,8 @@ func _grab():
 		velocity = Vector2.ZERO  # stop movement completely
 		
 		if grab_right:
-			animated_sprite.play("standPanda")
+			animated_sprite.play("grabRightPanda")
 		elif grab_left:
-			animated_sprite.play("standPanda")
+			animated_sprite.play("grabLeftPanda")
 	if Input.is_action_just_released("grabPanda"):
 		grabbin = false

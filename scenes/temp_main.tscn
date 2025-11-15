@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://or8p60ncqwo1" path="res://scenes/polar_bear_demo.tscn" id="2_n5b27"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n5b27"]
-size = Vector2(2740, 71)
+size = Vector2(2740, 1055.25)
 
 [node name="Temp Main" type="Node2D"]
 position = Vector2(581, 223)
@@ -15,7 +15,7 @@ position = Vector2(650, 678)
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(790, 1252)
+position = Vector2(792, 1746.38)
 shape = SubResource("RectangleShape2D_n5b27")
 debug_color = Color(0.975968, 0, 0.415419, 0.42)
 

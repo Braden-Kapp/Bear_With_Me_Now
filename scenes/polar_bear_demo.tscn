@@ -1,12 +1,13 @@
-[gd_scene load_steps=25 format=3 uid="uid://or8p60ncqwo1"]
+[gd_scene load_steps=28 format=3 uid="uid://or8p60ncqwo1"]
 
 [ext_resource type="Script" uid="uid://7bvdbacv75ye" path="res://scenes/polar_bear_demo.gd" id="1_t7wof"]
 [ext_resource type="Texture2D" uid="uid://0x1nb2x0ex0y" path="res://art/polar_big_jump_charge.png" id="2_t7wof"]
+[ext_resource type="Texture2D" uid="uid://b8t8ru77u3kob" path="res://art/polar_fall.png" id="3_4uccr"]
 [ext_resource type="Texture2D" uid="uid://cncjelhjoa21r" path="res://art/polar_left_run.png" id="3_48ni8"]
-[ext_resource type="Texture2D" uid="uid://267ufe3vh84e" path="res://art/polar_left.png" id="3_lxqwh"]
 [ext_resource type="Texture2D" uid="uid://bb14aa38fwwjr" path="res://art/polar_big_jump.png" id="4_lxqwh"]
+[ext_resource type="Texture2D" uid="uid://n6xrar4shia1" path="res://art/polar_left_jump-1.png.png" id="4_n0xa4"]
 [ext_resource type="Texture2D" uid="uid://dnykt2y20iwda" path="res://art/polar_right_run.png" id="5_4uccr"]
-[ext_resource type="Texture2D" uid="uid://5cwq0yncyjp" path="res://art/polar_right.png" id="6_4uccr"]
+[ext_resource type="Texture2D" uid="uid://bqd2jc0j7y4wg" path="res://art/polar_right_jump-1.png.png" id="6_kq138"]
 [ext_resource type="Texture2D" uid="uid://bohf68ii5trl6" path="res://art/polar_forwards.png" id="6_n0xa4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t1juj"]
@@ -22,6 +23,14 @@ region = Rect2(640, 0, 640, 640)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xml03"]
 atlas = ExtResource("2_t7wof")
+region = Rect2(0, 640, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kck48"]
+atlas = ExtResource("3_4uccr")
+region = Rect2(0, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tnw6j"]
+atlas = ExtResource("3_4uccr")
 region = Rect2(0, 640, 640, 640)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nej4a"]
@@ -82,7 +91,18 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_lxqwh")
+"texture": SubResource("AtlasTexture_kck48")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tnw6j")
+}],
+"loop": true,
+"name": &"fallBigJumpPolar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_n0xa4")
 }],
 "loop": true,
 "name": &"leftJumpPolar",
@@ -107,7 +127,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_4uccr")
+"texture": ExtResource("6_kq138")
 }],
 "loop": true,
 "name": &"rightJumpPolar",
@@ -164,8 +184,7 @@ shape = SubResource("RectangleShape2D_t1juj")
 position = Vector2(-7, -39)
 scale = Vector2(1, 1.161)
 sprite_frames = SubResource("SpriteFrames_psdwi")
-animation = &"standingPolar"
-frame_progress = 0.993378
+animation = &"bigJumpPolar"
 
 [node name="Area2D" type="Area2D" parent="."]
 
