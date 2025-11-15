@@ -11,15 +11,20 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jumpPanda") and is_on_floor():
+	if Input.is_action_just_pressed("jumpPolar") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("leftPanda", "rightPanda")
+	var direction := Input.get_axis("leftPolar", "rightPolar")
 	if direction:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
+	if is_on_floor():
+		_large_jump(delta)
 	
 	move_and_slide()
+func _large_jump(delta: float):
+	if Input.is_action_just_released("bigjumpPolar"):
+		velocity.y =  MAX_JUMP_VELOCITY
