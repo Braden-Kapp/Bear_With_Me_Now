@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://btvpep06p2cqg"]
+
+[ext_resource type="Script" uid="uid://cq6868mx76yyn" path="res://bear_demo.gd" id="1_t1juj"]
+[ext_resource type="Texture2D" uid="uid://b0t4wdoibk45w" path="res://art/testBear.jpg" id="2_qg7b2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t1juj"]
+size = Vector2(181, 142)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_psdwi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qg7b2")
+}],
+"loop": true,
+"name": &"testBear",
+"speed": 5.0
+}]
+
+[node name="BearDemo" type="CharacterBody2D"]
+script = ExtResource("1_t1juj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_t1juj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.75, -0.249985)
+scale = Vector2(0.15375, 0.179375)
+sprite_frames = SubResource("SpriteFrames_psdwi")
+animation = &"testBear"
