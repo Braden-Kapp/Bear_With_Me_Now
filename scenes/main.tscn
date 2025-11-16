@@ -1,6 +1,7 @@
-[gd_scene load_steps=33 format=3 uid="uid://dp2thyc34ulw6"]
+[gd_scene load_steps=35 format=3 uid="uid://dp2thyc34ulw6"]
 
 [ext_resource type="PackedScene" uid="uid://d11ewou64dunp" path="res://scenes/portal.tscn" id="1_jyhfs"]
+[ext_resource type="Script" uid="uid://cxjrammy7vgif" path="res://scenes/main.gd" id="1_muem4"]
 [ext_resource type="PackedScene" uid="uid://btvpep06p2cqg" path="res://scenes/bear_demo.tscn" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://or8p60ncqwo1" path="res://scenes/polar_bear_demo.tscn" id="2_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://834wa4oqhfjy" path="res://scenes/wall.tscn" id="2_tbgi4"]
@@ -15,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://isqm5agxc1xr" path="res://art/Background/BonfireF2.png" id="10_jbj1t"]
 [ext_resource type="Texture2D" uid="uid://bc5ck2ekmty7y" path="res://art/Background/BonfireF1.png" id="11_muem4"]
 [ext_resource type="Texture2D" uid="uid://bese0ijxo510x" path="res://art/Background/FishOnSticks.png" id="12_jkv2x"]
+[ext_resource type="AudioStream" uid="uid://bypk73byh4vd3" path="res://Ben's Project Demo.mp3" id="17_dp3eg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tefeu"]
 size = Vector2(6432, 6056)
@@ -79,6 +81,8 @@ animations = [{
 }]
 
 [node name="Main" type="Node2D"]
+position = Vector2(-465, 508)
+script = ExtResource("1_muem4")
 
 [node name="R1" type="Node2D" parent="."]
 
@@ -148,6 +152,7 @@ theme_override_font_sizes/font_size = 75
 text = "W = Jump "
 
 [node name="Label2" type="Label" parent="R1/infoLabels/Controls/Label"]
+layout_mode = 0
 offset_left = -356.0
 offset_top = 236.0
 offset_right = 4.0
@@ -156,6 +161,7 @@ theme_override_font_sizes/font_size = 75
 text = "A = Left"
 
 [node name="Label3" type="Label" parent="R1/infoLabels/Controls/Label"]
+layout_mode = 0
 offset_left = 419.0
 offset_top = 240.0
 offset_right = 779.0
@@ -164,6 +170,7 @@ theme_override_font_sizes/font_size = 75
 text = "D = Right"
 
 [node name="Label4" type="Label" parent="R1/infoLabels/Controls/Label"]
+layout_mode = 0
 offset_left = -374.0
 offset_top = 403.0
 offset_right = 934.0
@@ -172,6 +179,7 @@ theme_override_font_sizes/font_size = 75
 text = "S = Grab onto walls with green grass (or Polar)"
 
 [node name="Label5" type="Label" parent="R1/infoLabels/Controls/Label"]
+layout_mode = 0
 offset_left = -530.0
 offset_top = 619.0
 offset_right = 1063.0
@@ -180,6 +188,7 @@ theme_override_font_sizes/font_size = 75
 text = "Only Panda can stand on bamboo platforms"
 
 [node name="Label2" type="Label" parent="R1/infoLabels/Controls"]
+layout_mode = 0
 offset_left = 1240.0
 offset_top = 171.0
 offset_right = 1585.0
@@ -197,6 +206,7 @@ theme_override_font_sizes/font_size = 75
 text = "I = Jump "
 
 [node name="Label2" type="Label" parent="R1/infoLabels/Controls/Label2"]
+layout_mode = 0
 offset_left = -356.0
 offset_top = 236.0
 offset_right = 4.0
@@ -205,6 +215,7 @@ theme_override_font_sizes/font_size = 75
 text = "J = Left"
 
 [node name="Label3" type="Label" parent="R1/infoLabels/Controls/Label2"]
+layout_mode = 0
 offset_left = 419.0
 offset_top = 240.0
 offset_right = 779.0
@@ -213,6 +224,7 @@ theme_override_font_sizes/font_size = 75
 text = "L = Right"
 
 [node name="Label4" type="Label" parent="R1/infoLabels/Controls/Label2"]
+layout_mode = 0
 offset_left = 11.0
 offset_top = 400.0
 offset_right = 1319.0
@@ -221,6 +233,7 @@ theme_override_font_sizes/font_size = 75
 text = "K = Big Jump"
 
 [node name="Label5" type="Label" parent="R1/infoLabels/Controls/Label2"]
+layout_mode = 0
 offset_left = -351.0
 offset_top = 616.0
 offset_right = 957.0
@@ -238,6 +251,7 @@ theme_override_font_sizes/font_size = 150
 text = "You and your brother were invited to your friend's cookout"
 
 [node name="Label4" type="Label" parent="R1/infoLabels/cookout"]
+layout_mode = 0
 offset_left = 239.0
 offset_top = 203.0
 offset_right = 4041.0
@@ -678,6 +692,7 @@ theme_override_font_sizes/font_size = 100
 text = "Braden Kapp - Programmer"
 
 [node name="Label" type="Label" parent="R7/thanks/Label/Label"]
+layout_mode = 0
 offset_top = 247.0
 offset_right = 2248.0
 offset_bottom = 384.0
@@ -686,6 +701,7 @@ theme_override_font_sizes/font_size = 100
 text = "Rowan Kraniewski - Background/item designer"
 
 [node name="Label2" type="Label" parent="R7/thanks/Label/Label"]
+layout_mode = 0
 offset_left = 22.0
 offset_top = 384.0
 offset_right = 1344.0
@@ -695,6 +711,7 @@ theme_override_font_sizes/font_size = 100
 text = "Ben McNamee- Start Menu"
 
 [node name="Label2" type="Label" parent="R7/thanks/Label"]
+layout_mode = 0
 offset_left = 14.0
 offset_top = 239.0
 offset_right = 1336.0
@@ -704,6 +721,7 @@ theme_override_font_sizes/font_size = 100
 text = "Matt Wilson - Character Design"
 
 [node name="Label3" type="Label" parent="R7/thanks/Label"]
+layout_mode = 0
 offset_left = 25.0
 offset_top = 642.0
 offset_right = 1347.0
@@ -719,7 +737,11 @@ position = Vector2(1042, -390)
 position = Vector2(594, -366)
 
 [node name="MapofSprites" parent="." instance=ExtResource("3_tbgi4")]
-z_index = -100
+show_behind_parent = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_dp3eg")
+autoplay = true
 
 [editable path="R1/collisions/Portal"]
 [editable path="R2/collisions/Portal1"]

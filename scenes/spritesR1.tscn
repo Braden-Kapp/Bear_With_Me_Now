@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bowi0v53bsao3"]
+[gd_scene load_steps=14 format=3 uid="uid://bowi0v53bsao3"]
 
 [ext_resource type="Texture2D" uid="uid://b32pvt3v8iplw" path="res://art/Background/DirtA1.png" id="1_4cafy"]
 [ext_resource type="Texture2D" uid="uid://dn66pytlenhuu" path="res://art/Background/BackgroundA1.png" id="1_jvsj8"]
@@ -12,10 +12,13 @@
 [ext_resource type="Texture2D" uid="uid://dw4fjgt3ltfp0" path="res://art/Background/LeftLedgeA1.png" id="10_kldif"]
 [ext_resource type="Texture2D" uid="uid://e3kdxmkhoa7w" path="res://art/Background/CornerA1.png" id="11_isht5"]
 [ext_resource type="Texture2D" uid="uid://bd3n2s6txpjlh" path="res://art/Background/SideGrassA1.png" id="12_f8ul3"]
+[ext_resource type="Texture2D" uid="uid://c4rd25qjrharj" path="res://art/Background/BackgroundA1ForItch.png" id="13_f8ul3"]
 
 [node name="MapofSprites" type="Node2D"]
 
 [node name="background" type="Sprite2D" parent="."]
+visible = false
+show_behind_parent = true
 position = Vector2(31601.5, 478)
 scale = Vector2(3.60224, 3.34241)
 texture = ExtResource("1_jvsj8")
@@ -553,3 +556,12 @@ texture = ExtResource("7_isht5")
 [node name="Sprite2D3" type="Sprite2D" parent="T10"]
 position = Vector2(59435, 2338)
 texture = ExtResource("7_isht5")
+
+[node name="forItch" type="Node2D" parent="."]
+show_behind_parent = true
+
+[node name="Sprite2D" type="Sprite2D" parent="forItch"]
+show_behind_parent = true
+position = Vector2(27853, -5709)
+scale = Vector2(15, 15)
+texture = ExtResource("13_f8ul3")
