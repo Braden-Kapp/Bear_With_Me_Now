@@ -1,14 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://bfb1s18lxxv0b"]
 
-[ext_resource type="Script" uid="uid://d1xopnti545e" path="res://bamboo_plat.gd" id="1_8v3ig"]
+[ext_resource type="Script" uid="uid://c3yep1j4oykq1" path="res://scenes/ice_plat.gd" id="1_8v3ig"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4056m"]
-size = Vector2(261, 20)
+size = Vector2(595.5, 62)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_51c3j"]
-size = Vector2(261, 12)
+size = Vector2(594.5, 12)
 
-[node name="IcePlat" type="RigidBody2D"]
+[node name="IcePlat" type="CharacterBody2D"]
 script = ExtResource("1_8v3ig")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

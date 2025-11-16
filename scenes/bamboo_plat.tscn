@@ -1,29 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4qe2yq0aju80"]
+[gd_scene load_steps=5 format=3 uid="uid://b4qe2yq0aju80"]
 
 [ext_resource type="Script" uid="uid://d1xopnti545e" path="res://bamboo_plat.gd" id="1_cgqfp"]
+[ext_resource type="Texture2D" uid="uid://cw1jsacvkhpfi" path="res://art/Background/BambooA1.png" id="2_4056m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4056m"]
-size = Vector2(261, 20)
+size = Vector2(595.5, 62)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_51c3j"]
-size = Vector2(261, 12)
+size = Vector2(594.5, 12)
 
-[node name="BambooPlat" type="RigidBody2D"]
+[node name="BambooPlat" type="CharacterBody2D"]
 script = ExtResource("1_cgqfp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(120.5, 0)
+position = Vector2(136, -59)
 shape = SubResource("RectangleShape2D_4056m")
 debug_color = Color(0.159842, 0.633298, 0.352092, 0.42)
 
-[node name="Area2D" type="Area2D" parent="CollisionShape2D"]
+[node name="BambooA1" type="Sprite2D" parent="."]
+position = Vector2(125, -109)
+texture = ExtResource("2_4056m")
 
-[node name="CollisionShape" type="CollisionShape2D" parent="CollisionShape2D/Area2D"]
-position = Vector2(0, -16)
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-32, -80)
+
+[node name="CollisionShape" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(166.75, -16)
 shape = SubResource("RectangleShape2D_51c3j")
 debug_color = Color(0.971153, 0, 0.449894, 0.42)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(52, 47)
-
-[connection signal="area_entered" from="CollisionShape2D/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

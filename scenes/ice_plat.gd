@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var speed: float = 200.0
 
 @onready var collisionShape = $CollisionShape2D
-@onready var sprite = $BambooA1
+@onready var sprite = $Sprite2D
 #Can Set Start/End/Speed in Inspector
 var direction := 1
 
@@ -28,7 +28,6 @@ func _breakBamboo():
 		collisionShape.set_deferred("disabled", true)
 	if sprite:
 		sprite.visible = false
-		
 func _remakeBamboo():
 	if collisionShape:
 		collisionShape.set_deferred("disabled", false)
