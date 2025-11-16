@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bfb1s18lxxv0b"]
+[gd_scene load_steps=5 format=3 uid="uid://bfb1s18lxxv0b"]
 
 [ext_resource type="Script" uid="uid://c3yep1j4oykq1" path="res://scenes/ice_plat.gd" id="1_8v3ig"]
+[ext_resource type="Texture2D" uid="uid://miu4w8fyl0al" path="res://art/Background/IceA2.png" id="2_au88e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4056m"]
 size = Vector2(595.5, 62)
@@ -17,13 +18,15 @@ shape = SubResource("RectangleShape2D_4056m")
 debug_color = Color(0.159842, 0.633298, 0.352092, 0.42)
 
 [node name="Area2D" type="Area2D" parent="CollisionShape2D"]
+position = Vector2(0.5, -25)
 
 [node name="CollisionShape" type="CollisionShape2D" parent="CollisionShape2D/Area2D"]
-position = Vector2(0, -16)
+position = Vector2(0, -12)
 shape = SubResource("RectangleShape2D_51c3j")
 debug_color = Color(0.971153, 0, 0.449894, 0.42)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(52, 47)
+position = Vector2(127, 21)
+texture = ExtResource("2_au88e")
 
 [connection signal="area_entered" from="CollisionShape2D/Area2D" to="." method="_on_area_2d_area_entered"]

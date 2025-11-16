@@ -1,25 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://834wa4oqhfjy"]
+[gd_scene load_steps=5 format=3 uid="uid://834wa4oqhfjy"]
 
 [ext_resource type="Script" uid="uid://dfegojinorh2n" path="res://wall.gd" id="1_wykyb"]
+[ext_resource type="Texture2D" uid="uid://cifra2dpxdgj3" path="res://art/Background/ArrowRight.png" id="2_2ktk7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ktk7"]
-size = Vector2(43, 2250)
+size = Vector2(43, 8078.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e00m8"]
-size = Vector2(146.5, 1456)
+size = Vector2(201.5, 1456)
 
 [node name="Wall" type="StaticBody2D"]
 script = ExtResource("1_wykyb")
 
 [node name="Sign" type="Sprite2D" parent="."]
+position = Vector2(-99, 393)
+texture = ExtResource("2_2ktk7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
+position = Vector2(0, -1587.75)
 shape = SubResource("RectangleShape2D_2ktk7")
 
 [node name="DetectionArea" type="Area2D" parent="."]
 
 [node name="CollisionShape" type="CollisionShape2D" parent="DetectionArea"]
-position = Vector2(-40.75, -30)
+position = Vector2(-68.25, -30)
 shape = SubResource("RectangleShape2D_e00m8")
 debug_color = Color(0.967441, 1.63645e-06, 0.474233, 0.42)

@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://d2jppd27lcva2" path="res://art/panda_jump_right-1.png.png" id="6_jq831"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t1juj"]
-size = Vector2(291.5, 395)
+size = Vector2(291.5, 385)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7qpoi"]
 atlas = ExtResource("2_psdwi")
@@ -134,7 +134,7 @@ size = Vector2(246, 388)
 script = ExtResource("1_t1juj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(15.25, 31.5)
+position = Vector2(15.25, 26.5)
 shape = SubResource("RectangleShape2D_t1juj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

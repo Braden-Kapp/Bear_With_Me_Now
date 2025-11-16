@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="Bear With Me Now"
-run/main_scene="uid://crkvibnwu5r5a"
+run/main_scene="uid://dp2thyc34ulw6"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=1420
-window/size/viewport_height=740
+window/size/viewport_width=2560
+window/size/viewport_height=1400
 
 [input]
 

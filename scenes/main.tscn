@@ -1,0 +1,732 @@
+[gd_scene load_steps=33 format=3 uid="uid://dp2thyc34ulw6"]
+
+[ext_resource type="PackedScene" uid="uid://d11ewou64dunp" path="res://scenes/portal.tscn" id="1_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://btvpep06p2cqg" path="res://scenes/bear_demo.tscn" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://or8p60ncqwo1" path="res://scenes/polar_bear_demo.tscn" id="2_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://834wa4oqhfjy" path="res://scenes/wall.tscn" id="2_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://bfb1s18lxxv0b" path="res://scenes/ice_plat.tscn" id="3_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://bowi0v53bsao3" path="res://scenes/spritesR1.tscn" id="3_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://b4qe2yq0aju80" path="res://scenes/bamboo_plat.tscn" id="3_tefeu"]
+[ext_resource type="Texture2D" uid="uid://bd3n2s6txpjlh" path="res://art/Background/SideGrassA1.png" id="5_choun"]
+[ext_resource type="Texture2D" uid="uid://dwragttd0lbse" path="res://art/Background/MediumDirtA1.png" id="5_tipki"]
+[ext_resource type="Texture2D" uid="uid://dhld3idrybmuo" path="res://art/Background/TreeTrunkA1.png" id="6_85g3d"]
+[ext_resource type="Texture2D" uid="uid://dyxvvcb3otvg6" path="res://art/black_bear_idle-1.png.png" id="8_a8y0u"]
+[ext_resource type="Texture2D" uid="uid://c2gumejy2apxc" path="res://art/red_idle-1.png.png" id="9_jkv2x"]
+[ext_resource type="Texture2D" uid="uid://isqm5agxc1xr" path="res://art/Background/BonfireF2.png" id="10_jbj1t"]
+[ext_resource type="Texture2D" uid="uid://bc5ck2ekmty7y" path="res://art/Background/BonfireF1.png" id="11_muem4"]
+[ext_resource type="Texture2D" uid="uid://bese0ijxo510x" path="res://art/Background/FishOnSticks.png" id="12_jkv2x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tefeu"]
+size = Vector2(6432, 6056)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o6xl0"]
+size = Vector2(1683.5, 2486)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tipki"]
+size = Vector2(2712, 6000)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_85g3d"]
+size = Vector2(2599, 9330)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_choun"]
+size = Vector2(2596, 6005)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ya4ey"]
+size = Vector2(3524.5, 1695)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eb6dy"]
+size = Vector2(1248, 3538.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trceg"]
+size = Vector2(2568, 6950.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jkv2x"]
+size = Vector2(352, 3982)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a8y0u"]
+size = Vector2(2531, 4082)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jbj1t"]
+size = Vector2(407, 390)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_muem4"]
+size = Vector2(1414, 2677.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dp3eg"]
+size = Vector2(2657, 2366)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ld40"]
+size = Vector2(3977.5, 3061.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gqmmt"]
+size = Vector2(2634.5, 2141)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yc10j"]
+size = Vector2(278.5, 1988)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jscy8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_jbj1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_muem4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Main" type="Node2D"]
+
+[node name="R1" type="Node2D" parent="."]
+
+[node name="collisions" type="Node2D" parent="R1"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="R1/collisions"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R1/collisions/StaticBody2D"]
+position = Vector2(3257, 2909)
+shape = SubResource("RectangleShape2D_tefeu")
+
+[node name="Portal" parent="R1/collisions" instance=ExtResource("1_jyhfs")]
+position = Vector2(6218, 1774)
+
+[node name="PandaDestination" parent="R1/collisions/Portal/Node2D" index="0"]
+position = Vector2(-5625, -2384)
+
+[node name="PolarDestination" parent="R1/collisions/Portal/Node2D" index="1"]
+position = Vector2(-4959, -2328)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="R1/collisions"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R1/collisions/StaticBody2D2"]
+position = Vector2(7843.25, 1147)
+shape = SubResource("RectangleShape2D_o6xl0")
+
+[node name="R1Camera2D" type="Camera2D" parent="R1"]
+position = Vector2(3691, -355)
+zoom = Vector2(0.32, 0.32)
+limit_left = -1024
+limit_top = -2496
+limit_right = 7744
+limit_bottom = 1408
+
+[node name="Wall" parent="R1" node_paths=PackedStringArray("next_camera") instance=ExtResource("2_tbgi4")]
+position = Vector2(7658, -819)
+next_camera = NodePath("../../R2/R2Camera2D")
+
+[node name="infoLabels" type="Node2D" parent="R1"]
+
+[node name="Controls" type="Label" parent="R1/infoLabels"]
+offset_left = 2268.0
+offset_top = 82.0
+offset_right = 2797.0
+offset_bottom = 359.0
+theme_override_font_sizes/font_size = 100
+text = "CONTROLS
+"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="R1/infoLabels/Controls"]
+layout_mode = 0
+offset_left = -1263.0
+offset_top = 171.0
+offset_right = -918.0
+offset_bottom = 308.0
+theme_override_font_sizes/font_size = 100
+text = "PANDA"
+
+[node name="Label" type="Label" parent="R1/infoLabels/Controls/Label"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 117.0
+offset_right = 385.0
+offset_bottom = 220.0
+theme_override_font_sizes/font_size = 75
+text = "W = Jump "
+
+[node name="Label2" type="Label" parent="R1/infoLabels/Controls/Label"]
+offset_left = -356.0
+offset_top = 236.0
+offset_right = 4.0
+offset_bottom = 339.0
+theme_override_font_sizes/font_size = 75
+text = "A = Left"
+
+[node name="Label3" type="Label" parent="R1/infoLabels/Controls/Label"]
+offset_left = 419.0
+offset_top = 240.0
+offset_right = 779.0
+offset_bottom = 343.0
+theme_override_font_sizes/font_size = 75
+text = "D = Right"
+
+[node name="Label4" type="Label" parent="R1/infoLabels/Controls/Label"]
+offset_left = -374.0
+offset_top = 403.0
+offset_right = 934.0
+offset_bottom = 506.0
+theme_override_font_sizes/font_size = 75
+text = "S = Grab onto walls with green grass (or Polar)"
+
+[node name="Label5" type="Label" parent="R1/infoLabels/Controls/Label"]
+offset_left = -530.0
+offset_top = 619.0
+offset_right = 1063.0
+offset_bottom = 722.0
+theme_override_font_sizes/font_size = 75
+text = "Only Panda can stand on bamboo platforms"
+
+[node name="Label2" type="Label" parent="R1/infoLabels/Controls"]
+offset_left = 1240.0
+offset_top = 171.0
+offset_right = 1585.0
+offset_bottom = 308.0
+theme_override_font_sizes/font_size = 100
+text = "POLAR"
+
+[node name="Label" type="Label" parent="R1/infoLabels/Controls/Label2"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 117.0
+offset_right = 385.0
+offset_bottom = 220.0
+theme_override_font_sizes/font_size = 75
+text = "I = Jump "
+
+[node name="Label2" type="Label" parent="R1/infoLabels/Controls/Label2"]
+offset_left = -356.0
+offset_top = 236.0
+offset_right = 4.0
+offset_bottom = 339.0
+theme_override_font_sizes/font_size = 75
+text = "J = Left"
+
+[node name="Label3" type="Label" parent="R1/infoLabels/Controls/Label2"]
+offset_left = 419.0
+offset_top = 240.0
+offset_right = 779.0
+offset_bottom = 343.0
+theme_override_font_sizes/font_size = 75
+text = "L = Right"
+
+[node name="Label4" type="Label" parent="R1/infoLabels/Controls/Label2"]
+offset_left = 11.0
+offset_top = 400.0
+offset_right = 1319.0
+offset_bottom = 503.0
+theme_override_font_sizes/font_size = 75
+text = "K = Big Jump"
+
+[node name="Label5" type="Label" parent="R1/infoLabels/Controls/Label2"]
+offset_left = -351.0
+offset_top = 616.0
+offset_right = 957.0
+offset_bottom = 719.0
+theme_override_font_sizes/font_size = 75
+text = "Only Polar can stand on ice platforms"
+
+[node name="cookout" type="Label" parent="R1/infoLabels"]
+offset_left = 1134.0
+offset_top = -1915.0
+offset_right = 5399.0
+offset_bottom = -1710.0
+theme_override_colors/font_color = Color(0.945098, 0.243137, 0.0784314, 1)
+theme_override_font_sizes/font_size = 150
+text = "You and your brother were invited to your friend's cookout"
+
+[node name="Label4" type="Label" parent="R1/infoLabels/cookout"]
+offset_left = 239.0
+offset_top = 203.0
+offset_right = 4041.0
+offset_bottom = 374.0
+theme_override_colors/font_color = Color(0.945098, 0.243137, 0.0784314, 1)
+theme_override_font_sizes/font_size = 125
+text = "Bare through the journey with your brother to get some dinner"
+
+[node name="R2" type="Node2D" parent="."]
+
+[node name="collisions" type="Node2D" parent="R2"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="R2/collisions"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R2/collisions/StaticBody2D"]
+position = Vector2(11025, 2850)
+shape = SubResource("RectangleShape2D_tipki")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="R2/collisions/StaticBody2D"]
+position = Vector2(16609.5, 1797)
+shape = SubResource("RectangleShape2D_85g3d")
+
+[node name="Portal1" parent="R2/collisions" instance=ExtResource("1_jyhfs")]
+position = Vector2(11787, 1216)
+
+[node name="PandaDestination" parent="R2/collisions/Portal1/Node2D" index="0"]
+position = Vector2(-3319, -2517)
+
+[node name="PolarDestination" parent="R2/collisions/Portal1/Node2D" index="1"]
+position = Vector2(-3722, -2259)
+
+[node name="Portal2" parent="R2/collisions" instance=ExtResource("1_jyhfs")]
+position = Vector2(11146, 861)
+
+[node name="CollisionShape2D" parent="R2/collisions/Portal2" index="0"]
+position = Vector2(1533, 51)
+
+[node name="PandaDestination" parent="R2/collisions/Portal2/Node2D" index="0"]
+position = Vector2(-3032, -1469)
+
+[node name="PolarDestination" parent="R2/collisions/Portal2/Node2D" index="1"]
+position = Vector2(-2729, -1770)
+
+[node name="platforms" type="Node2D" parent="R2"]
+
+[node name="BambooPlat1" parent="R2/platforms" instance=ExtResource("3_tefeu")]
+position = Vector2(14282, -680)
+startPosition = Vector2(14282, -680)
+endPosition = Vector2(14282, -680)
+
+[node name="BambooPlat2" parent="R2/platforms" instance=ExtResource("3_tefeu")]
+position = Vector2(13075, -272)
+startPosition = Vector2(13075, -272)
+endPosition = Vector2(13075, -272)
+
+[node name="BambooPlat3" parent="R2/platforms" instance=ExtResource("3_tefeu")]
+position = Vector2(13252, -3358)
+startPosition = Vector2(13252, -978)
+endPosition = Vector2(13252, -3358)
+
+[node name="R2Camera2D" type="Camera2D" parent="R2"]
+position = Vector2(10871, -183)
+enabled = false
+zoom = Vector2(0.305, 0.305)
+limit_left = 7450
+limit_top = -4000
+limit_right = 16500
+limit_bottom = 820
+
+[node name="Wall" parent="R2" node_paths=PackedStringArray("next_camera") instance=ExtResource("2_tbgi4")]
+position = Vector2(15772, -3568)
+next_camera = NodePath("../../R3/R3Camera2D")
+
+[node name="R3" type="Node2D" parent="."]
+
+[node name="collisions" type="Node2D" parent="R3"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="R3/collisions"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R3/collisions/StaticBody2D"]
+position = Vector2(24300, 2802)
+shape = SubResource("RectangleShape2D_choun")
+
+[node name="Portal" parent="R3/collisions" instance=ExtResource("1_jyhfs")]
+position = Vector2(18632, 1088)
+
+[node name="CollisionShape2D" parent="R3/collisions/Portal" index="0"]
+position = Vector2(1863, 51)
+
+[node name="PandaDestination" parent="R3/collisions/Portal/Node2D" index="0"]
+position = Vector2(-2344, -4449)
+
+[node name="PolarDestination" parent="R3/collisions/Portal/Node2D" index="1"]
+position = Vector2(-1697, -4512)
+
+[node name="R3Camera2D" type="Camera2D" parent="R3"]
+position = Vector2(20057, -1440)
+enabled = false
+zoom = Vector2(0.28, 0.28)
+
+[node name="Platforms" type="Node2D" parent="R3"]
+
+[node name="BambooPlat" parent="R3/Platforms" instance=ExtResource("3_tefeu")]
+position = Vector2(19626, -346)
+startPosition = Vector2(18311, -346)
+endPosition = Vector2(19626, -346)
+
+[node name="IcePlat" parent="R3/Platforms" instance=ExtResource("3_o6xl0")]
+position = Vector2(20527, -102)
+startPosition = Vector2(22359, -102)
+endPosition = Vector2(20527, -102)
+
+[node name="Wall" parent="R3" node_paths=PackedStringArray("next_camera") instance=ExtResource("2_tbgi4")]
+position = Vector2(24567, -927)
+next_camera = NodePath("../../R4/R4Camera2D")
+
+[node name="R4" type="Node2D" parent="."]
+
+[node name="collisions" type="Node2D" parent="R4"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="R4/collisions"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R4/collisions/StaticBody2D"]
+position = Vector2(29333.8, 2644.5)
+shape = SubResource("RectangleShape2D_ya4ey")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="R4/collisions/StaticBody2D"]
+position = Vector2(31725, 1714.75)
+shape = SubResource("RectangleShape2D_eb6dy")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="R4/collisions/StaticBody2D"]
+position = Vector2(33632, -55.25)
+shape = SubResource("RectangleShape2D_trceg")
+
+[node name="Area2D" type="Area2D" parent="R4/collisions/StaticBody2D"]
+position = Vector2(32537, -1027)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R4/collisions/StaticBody2D/Area2D"]
+position = Vector2(-43, -518)
+shape = SubResource("RectangleShape2D_jkv2x")
+debug_color = Color(0.937763, 1.2514e-05, 0.626586, 0.42)
+
+[node name="Portal" parent="R4/collisions" instance=ExtResource("1_jyhfs")]
+position = Vector2(26903, 2742)
+
+[node name="PandaDestination" parent="R4/collisions/Portal/Node2D" index="0"]
+position = Vector2(-2227, -3520)
+
+[node name="PolarDestination" parent="R4/collisions/Portal/Node2D" index="1"]
+position = Vector2(-1710, -3486)
+
+[node name="ExtraPlatform" type="StaticBody2D" parent="R4/collisions"]
+position = Vector2(28502, -2015)
+
+[node name="Sprite2D2" type="Sprite2D" parent="R4/collisions/ExtraPlatform"]
+position = Vector2(115, 436)
+scale = Vector2(1, 1.56437)
+texture = ExtResource("5_choun")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R4/collisions/ExtraPlatform"]
+position = Vector2(-1145.5, -596)
+shape = SubResource("RectangleShape2D_a8y0u")
+
+[node name="Sprite2D" type="Sprite2D" parent="R4/collisions/ExtraPlatform"]
+z_index = -1
+position = Vector2(-1107.25, -572)
+scale = Vector2(1.26105, 1)
+texture = ExtResource("5_tipki")
+
+[node name="Area2D" type="Area2D" parent="R4/collisions/ExtraPlatform"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R4/collisions/ExtraPlatform/Area2D"]
+position = Vector2(-43, -518)
+shape = SubResource("RectangleShape2D_jkv2x")
+debug_color = Color(0.937763, 1.2514e-05, 0.626586, 0.42)
+
+[node name="Sprite2D3" type="Sprite2D" parent="R4/collisions/ExtraPlatform"]
+position = Vector2(115, -1505)
+scale = Vector2(1, 1.56437)
+texture = ExtResource("5_choun")
+flip_h = true
+
+[node name="treeTrunk" type="StaticBody2D" parent="R4/collisions"]
+position = Vector2(30734, 1547)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R4/collisions/treeTrunk"]
+position = Vector2(80.5, 80)
+shape = SubResource("RectangleShape2D_jbj1t")
+debug_color = Color(0.752431, 0.446925, 0.278581, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="R4/collisions/treeTrunk"]
+position = Vector2(61, -4)
+texture = ExtResource("6_85g3d")
+
+[node name="R4Camera2D" type="Camera2D" parent="R4"]
+position = Vector2(29119, -1033)
+enabled = false
+zoom = Vector2(0.225, 0.225)
+
+[node name="Platforms" type="Node2D" parent="R4"]
+
+[node name="BambooPlat" parent="R4/Platforms" instance=ExtResource("3_tefeu")]
+position = Vector2(25838, 0)
+startPosition = Vector2(25838, 0)
+endPosition = Vector2(30286, 0)
+
+[node name="BambooPlat2" parent="R4/Platforms" instance=ExtResource("3_tefeu")]
+position = Vector2(30502, -205)
+startPosition = Vector2(30502, -205)
+endPosition = Vector2(28980, -1809)
+
+[node name="BambooPlat3" parent="R4/Platforms" instance=ExtResource("3_tefeu")]
+position = Vector2(31697, -3409)
+startPosition = Vector2(28979, -1974)
+endPosition = Vector2(31697, -3409)
+
+[node name="IcePlat" parent="R4/Platforms" instance=ExtResource("3_o6xl0")]
+position = Vector2(31475, -2538)
+startPosition = Vector2(31475, -2538)
+endPosition = Vector2(31475, -2538)
+
+[node name="Wall" parent="R4" node_paths=PackedStringArray("next_camera") instance=ExtResource("2_tbgi4")]
+position = Vector2(33894, -4277)
+next_camera = NodePath("../../R5/R5Camera2D")
+
+[node name="R5" type="Node2D" parent="."]
+
+[node name="collisions" type="Node2D" parent="R5"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="R5/collisions"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R5/collisions/StaticBody2D"]
+position = Vector2(35626, 53.25)
+shape = SubResource("RectangleShape2D_muem4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="R5/collisions/StaticBody2D"]
+position = Vector2(46630.5, 329)
+shape = SubResource("RectangleShape2D_dp3eg")
+
+[node name="Portal" parent="R5/collisions" instance=ExtResource("1_jyhfs")]
+position = Vector2(38222, 798)
+
+[node name="CollisionShape2D" parent="R5/collisions/Portal" index="0"]
+position = Vector2(2706.5, 51)
+
+[node name="PandaDestination" parent="R5/collisions/Portal/Node2D" index="0"]
+position = Vector2(-4092, -4543)
+
+[node name="PolarDestination" parent="R5/collisions/Portal/Node2D" index="1"]
+position = Vector2(-3732, -4617)
+
+[node name="R5Camera2D" type="Camera2D" parent="R5"]
+position = Vector2(40154, -2906)
+enabled = false
+zoom = Vector2(0.2, 0.2)
+
+[node name="platforms" type="Node2D" parent="R5"]
+
+[node name="IcePlat" parent="R5/platforms" instance=ExtResource("3_o6xl0")]
+position = Vector2(40347, -1044)
+startPosition = Vector2(36911, -1044)
+endPosition = Vector2(40347, -1044)
+
+[node name="IcePlat2" parent="R5/platforms" instance=ExtResource("3_o6xl0")]
+position = Vector2(41152, -2620)
+startPosition = Vector2(41152, -2620)
+endPosition = Vector2(41152, -2620)
+
+[node name="IcePlat3" parent="R5/platforms" instance=ExtResource("3_o6xl0")]
+position = Vector2(41688, -4718)
+startPosition = Vector2(40372, -2762)
+endPosition = Vector2(41688, -4718)
+
+[node name="IcePlat4" parent="R5/platforms" instance=ExtResource("3_o6xl0")]
+position = Vector2(40292, -4750)
+startPosition = Vector2(40292, -4750)
+endPosition = Vector2(40292, -4750)
+
+[node name="IcePlat5" parent="R5/platforms" instance=ExtResource("3_o6xl0")]
+position = Vector2(44182, -5420)
+startPosition = Vector2(38733, -5420)
+endPosition = Vector2(44182, -5420)
+
+[node name="BambooPlat" parent="R5/platforms" instance=ExtResource("3_tefeu")]
+position = Vector2(36053, -4713)
+startPosition = Vector2(35162, -3822)
+endPosition = Vector2(36053, -4713)
+
+[node name="BambooPlat2" parent="R5/platforms" instance=ExtResource("3_tefeu")]
+position = Vector2(38273, -4164)
+startPosition = Vector2(37125, -3292)
+endPosition = Vector2(38273, -4164)
+
+[node name="BambooPlat3" parent="R5/platforms" instance=ExtResource("3_tefeu")]
+position = Vector2(38020, -4986)
+startPosition = Vector2(38973, -4166)
+endPosition = Vector2(38020, -4986)
+
+[node name="BambooPlat4" parent="R5/platforms" instance=ExtResource("3_tefeu")]
+position = Vector2(37289, -5390)
+startPosition = Vector2(37289, -5390)
+endPosition = Vector2(37289, -5390)
+
+[node name="Wall" parent="R5" node_paths=PackedStringArray("next_camera") instance=ExtResource("2_tbgi4")]
+position = Vector2(46512, -1537)
+next_camera = NodePath("../../R6/R6Camera2D")
+
+[node name="CollisionShape2D" parent="R5/Wall" index="1"]
+position = Vector2(0, -2075.75)
+
+[node name="R6" type="Node2D" parent="."]
+
+[node name="collisions" type="Node2D" parent="R6"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="R6/collisions"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R6/collisions/StaticBody2D"]
+position = Vector2(51116.3, -1891.63)
+shape = SubResource("RectangleShape2D_0ld40")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="R6/collisions/StaticBody2D"]
+position = Vector2(59104.8, 93.5)
+shape = SubResource("RectangleShape2D_gqmmt")
+
+[node name="Area2D" type="Area2D" parent="R6/collisions"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="R6/collisions/Area2D"]
+position = Vector2(49199.3, -2474)
+shape = SubResource("RectangleShape2D_yc10j")
+debug_color = Color(0.967512, 0, 0.473785, 0.42)
+
+[node name="Portal" parent="R6/collisions" instance=ExtResource("1_jyhfs")]
+position = Vector2(51589, 1393)
+
+[node name="CollisionShape2D" parent="R6/collisions/Portal" index="0"]
+position = Vector2(1255.75, 51)
+
+[node name="PandaDestination" parent="R6/collisions/Portal/Node2D" index="0"]
+position = Vector2(-4355, -2630)
+
+[node name="PolarDestination" parent="R6/collisions/Portal/Node2D" index="1"]
+position = Vector2(-3837, -2572)
+
+[node name="platforms" type="Node2D" parent="R6"]
+
+[node name="BambooPlat" parent="R6/platforms" instance=ExtResource("3_tefeu")]
+position = Vector2(48299, 235)
+startPosition = Vector2(53397, 221)
+endPosition = Vector2(48299, 221)
+
+[node name="IcePlat" parent="R6/platforms" instance=ExtResource("3_o6xl0")]
+position = Vector2(54171, -515)
+startPosition = Vector2(54171, 350)
+endPosition = Vector2(54171, -515)
+
+[node name="BambooPlat2" parent="R6/platforms" instance=ExtResource("3_tefeu")]
+position = Vector2(56863, -1118)
+startPosition = Vector2(54936, 324)
+endPosition = Vector2(56863, -1118)
+
+[node name="R6Camera2D" type="Camera2D" parent="R6"]
+position = Vector2(52349, -2785)
+enabled = false
+zoom = Vector2(0.21, 0.21)
+
+[node name="Wall" parent="R6" node_paths=PackedStringArray("next_camera") instance=ExtResource("2_tbgi4")]
+position = Vector2(58141, -1686)
+next_camera = NodePath("../../R7/R7Camera2D")
+
+[node name="R7" type="Node2D" parent="."]
+
+[node name="collisions" type="Node2D" parent="R7"]
+
+[node name="R7Camera2D" type="Camera2D" parent="R7"]
+position = Vector2(59344, -1803)
+enabled = false
+zoom = Vector2(0.7, 0.7)
+
+[node name="sprites" type="Node2D" parent="R7"]
+
+[node name="Sprite2D" type="Sprite2D" parent="R7/sprites"]
+position = Vector2(59937, -1173)
+texture = ExtResource("8_a8y0u")
+flip_h = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="R7/sprites"]
+position = Vector2(59597, -1165)
+texture = ExtResource("9_jkv2x")
+flip_h = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="R7/sprites"]
+position = Vector2(59147, -1174)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_jscy8")
+frame_progress = 0.914576
+
+[node name="Sprite2D3" type="Sprite2D" parent="R7/sprites"]
+position = Vector2(58789, -1304)
+texture = ExtResource("12_jkv2x")
+
+[node name="Portal" parent="R7" instance=ExtResource("1_jyhfs")]
+position = Vector2(62538, 0)
+
+[node name="PandaDestination" parent="R7/Portal/Node2D" index="0"]
+position = Vector2(-3935, -1243)
+
+[node name="PolarDestination" parent="R7/Portal/Node2D" index="1"]
+position = Vector2(-4243, -1228)
+
+[node name="thanks" type="Label" parent="R7"]
+offset_left = 58438.0
+offset_top = -2775.0
+offset_right = 61492.0
+offset_bottom = -2570.0
+theme_override_colors/font_color = Color(0.396078, 1, 1, 1)
+theme_override_font_sizes/font_size = 125
+text = "Thanks for makin it here, means alot to us"
+
+[node name="Label" type="Label" parent="R7/thanks"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 167.0
+offset_right = 278.0
+offset_bottom = 291.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 90
+text = "Creds"
+
+[node name="Label" type="Label" parent="R7/thanks/Label"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 117.0
+offset_right = 1330.0
+offset_bottom = 254.0
+theme_override_colors/font_color = Color(1, 0.317647, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "Braden Kapp - Programmer"
+
+[node name="Label" type="Label" parent="R7/thanks/Label/Label"]
+offset_top = 247.0
+offset_right = 2248.0
+offset_bottom = 384.0
+theme_override_colors/font_color = Color(0.408055, 0.288118, 0.690415, 1)
+theme_override_font_sizes/font_size = 100
+text = "Rowan Kraniewski - Background/item designer"
+
+[node name="Label2" type="Label" parent="R7/thanks/Label/Label"]
+offset_left = 22.0
+offset_top = 384.0
+offset_right = 1344.0
+offset_bottom = 521.0
+theme_override_colors/font_color = Color(0, 0, 0.960784, 1)
+theme_override_font_sizes/font_size = 100
+text = "Ben McNamee- Start Menu"
+
+[node name="Label2" type="Label" parent="R7/thanks/Label"]
+offset_left = 14.0
+offset_top = 239.0
+offset_right = 1336.0
+offset_bottom = 376.0
+theme_override_colors/font_color = Color(0.945098, 0.764706, 0.180392, 1)
+theme_override_font_sizes/font_size = 100
+text = "Matt Wilson - Character Design"
+
+[node name="Label3" type="Label" parent="R7/thanks/Label"]
+offset_left = 25.0
+offset_top = 642.0
+offset_right = 1347.0
+offset_bottom = 779.0
+theme_override_colors/font_color = Color(0.352941, 0.886275, 0.392157, 1)
+theme_override_font_sizes/font_size = 100
+text = "Special Thanks to Jakob Tinnon for the music"
+
+[node name="PandaBearDemo" parent="." instance=ExtResource("1_sugp2")]
+position = Vector2(1042, -390)
+
+[node name="PolarBearDemo" parent="." instance=ExtResource("2_jyhfs")]
+position = Vector2(594, -366)
+
+[node name="MapofSprites" parent="." instance=ExtResource("3_tbgi4")]
+z_index = -100
+
+[editable path="R1/collisions/Portal"]
+[editable path="R2/collisions/Portal1"]
+[editable path="R2/collisions/Portal2"]
+[editable path="R3/collisions/Portal"]
+[editable path="R4/collisions/Portal"]
+[editable path="R5/collisions/Portal"]
+[editable path="R5/Wall"]
+[editable path="R6/collisions/Portal"]
+[editable path="R7/Portal"]

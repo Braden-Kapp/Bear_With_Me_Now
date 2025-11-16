@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name PolarBearDemo
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-const SPEED = 800.0
+const SPEED = 1200.0
 const JUMP_VELOCITY = -1300.0
 const MAX_JUMP_VELOCITY = -2500.0
 var bigJumpin = false

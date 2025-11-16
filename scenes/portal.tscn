@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://xroarei62p0b" path="res://portal.gd" id="1_v0xau"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ffj6"]
-size = Vector2(1454, 97)
+size = Vector2(10274.5, 97)
 
 [node name="Portal" type="Area2D" node_paths=PackedStringArray("pandaDestination", "polarDestination")]
 script = ExtResource("1_v0xau")
